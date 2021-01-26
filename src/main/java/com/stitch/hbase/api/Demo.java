@@ -11,9 +11,9 @@ import java.util.List;
 
 public class Demo {
 
-    public static Configuration conf;
-    public static Admin admin = null;
-    public static Connection connection = null;
+    private static Configuration conf;
+    private static Admin admin = null;
+    private static Connection connection = null;
 
     // 获取 Configuration 对象
     static{
@@ -22,7 +22,7 @@ public class Demo {
             conf = HBaseConfiguration.create();
             conf.set("hbase.zookeeper.quorum", "150.158.174.69,121.4.205.232,111.229.176.181");
             conf.set("hbase.zookeeper.property.clientPort", "2181");
-            conf.set("hbase.master", "150.158.174.69:60010");
+            //conf.set("hbase.master", "150.158.174.69:60010");
             connection = ConnectionFactory.createConnection(conf);
             admin = connection.getAdmin();
         } catch (IOException e){
